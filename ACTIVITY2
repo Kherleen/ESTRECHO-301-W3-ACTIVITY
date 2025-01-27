@@ -10,7 +10,7 @@ const TextInputExample = () => {
   const [course, onChangeCourse] = React.useState('COURSE:');
   const [email, onChangeEmail] = React.useState('EMAIL:');
   const [contact, onChangeContactNo] = React.useState('CONTACT NO.');
-  const [aboutme, onChangeAboutMe] = React.useState('ABOUT ME: \n\n My name is kherleen Mae S. Estrecho.BSIT studetn in global reciprocal college 3rd year student. I love outside activities like badmention, basketball and etc. Im also 21 yrs old lived in caloocan city.');
+  const [aboutme, onChangeAboutMe] = React.useState('ABOUT ME \n\n My name is kherleen Mae S. Estrecho.BSIT studetn in global reciprocal college 3rd year student. I love outside activities like badmention, basketball and etc. Im also 21 yrs old lived in caloocan city.');
 
 
 
@@ -68,10 +68,13 @@ const TextInputExample = () => {
         />
        <TextInput
           style={styles.input}
-          onChangeText={onChangeContactNo}
+          editable
+          multiline
+          numberOfLines={8}
+          maxLength={100}
+          onChangeText={text => onChangeText(text)}
           value={aboutme}
-          placeholder=""
-          keyboardType="numeric"
+          placeholder="ABOUT ME:"
         />
 
 
@@ -86,7 +89,11 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
+    borderBottomColor: '#000',
+    borderBottomWidth: 1,
   },
 });
+
+
 
 export default TextInputExample;
