@@ -1,0 +1,82 @@
+import React from 'react';
+import {StyleSheet, TextInput} from 'react-native';
+import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
+
+const TextInputExample = () => {
+  const [text, onChangeText] = React.useState('NAME:');
+  const [age, onChangeAge] = React.useState('AGE:');
+  const [address, onChangeaddress] = React.useState('ADDRESS:');
+  const [school, onChangeSchool] = React.useState('SCHOOL:');
+  const [course, onChangeCourse] = React.useState('COURSE:');
+  const [email, onChangeEmail] = React.useState('EMAIL:');
+  const [contact, onChangeContactNo] = React.useState('CONTACT NO.');
+
+
+
+
+  return (
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeText}
+          value={text}
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeAge}
+          value={age}
+          placeholder="AGE:"
+          keyboardType="numeric"
+          
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeaddress}
+          value={address}
+          placeholder="ADDRESS:"
+          keyboardType="numeric"
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeSchool}
+          value={school}
+          placeholder="SCHOOL"
+          keyboardType="numeric"
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeCourse}
+          value={course}
+          placeholder="COURSE:"
+          keyboardType="numeric"
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeEmail}
+          value={email}
+          placeholder="EMAIL:"
+          keyboardType="numeric"
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeContactNo}
+          value={contact}
+          placeholder="CONTACT NO."
+          keyboardType="numeric"
+        />
+      </SafeAreaView>
+    </SafeAreaProvider>
+  );
+};
+
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});
+
+export default TextInputExample;
